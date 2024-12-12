@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        GITHUB_TOKEN = credentials('github-token')
+        GITHUB_TOKEN = credentials('f1524b17-d6f4-4a88-b967-1b4624752ebf')
     }
     stages {
         stage('Checkout') {
@@ -40,7 +40,7 @@ pipeline {
 }
 def updateGitHubStatus(String status) {
     
-    withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
+    withCredentials([string(credentialsId: 'f1524b17-d6f4-4a88-b967-1b4624752ebf', variable: 'GITHUB_TOKEN')]) {
         def prUrl = "https://api.github.com/repos/pacots/PROF-Jenkins-Exercise-1/statuses/${env.GIT_COMMIT}"
         def data = """
         {
