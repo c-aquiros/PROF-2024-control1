@@ -27,5 +27,17 @@ public class Account {
 	public String getAccountNumber() {
 		return accountNumber;
 	}
+	
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+	
+	public void setInitialAmount(float initialAmount) {
+		this.initialAmount = initialAmount;
+	}
+	
+	public void addTransaction(Transaction transaction) {
+		this.transactions.add(transaction);
+	}
 
 }
