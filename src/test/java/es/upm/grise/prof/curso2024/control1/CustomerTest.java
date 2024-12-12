@@ -8,21 +8,20 @@ import org.junit.jupiter.api.Test;
 public class CustomerTest {
 
 	@Test
-    void getAccountWithHighestBalanceTest() {
+    void getAccountWithHighestBalanceExceptionTest() {
         Customer customer = new Customer();
         Assertions.assertThrows(NoAccountsException.class, () -> {
             customer.getAccountWithHighestBalance();
         });
     }
 	
-	// Constantes para evitar "Magic Numbers"
     private static final String ACCOUNT_NUMBER_1 = "ACC-001";
     private static final String ACCOUNT_NUMBER_2 = "ACC-002";
     private static final float INITIAL_AMOUNT_1 = 100.0f;
     private static final float INITIAL_AMOUNT_2 = 200.0f;
 
     @Test
-    void testGetAccountWithHighestBalanceReturnsCorrectAccountNumber() {
+    void getAccountWithHighestBalanceAccountNumberTest() {
         Customer customer = new Customer();
 
         Account account1 = new Account();
@@ -47,5 +46,4 @@ public class CustomerTest {
         assertEquals(ACCOUNT_NUMBER_2, highestBalanceAccountNumber, 
             "Se esperaba la cuenta con número " + ACCOUNT_NUMBER_2 + " al tener mayor saldo.");
     }
-
 }
